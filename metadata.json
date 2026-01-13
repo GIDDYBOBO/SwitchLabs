@@ -1,5 +1,6 @@
 {
   "name": "Switch Labs",
-  "description": "A high-performance landing page for Switch Labs, combining the sleek layout of Mocku with the crypto-focused content of Switch Labs.",
-  "requestFramePermissions": []
+  "description": "A high-performance landing page for Switch Labs. Best deployed as a Static Site (Other) on Vercel.",
+  "requestFramePermissions": [],
+  "framework": "static"
 }
