@@ -55,6 +55,12 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
     }
   };
 
+  const inputClasses = `w-full px-8 py-4 rounded-2xl border focus:outline-none transition-all text-xs font-bold ${
+    isDarkMode 
+      ? 'bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-purple-500/50' 
+      : 'bg-black/5 border-black/10 text-black placeholder:text-black/30 focus:border-pink-500/50'
+  }`;
+
   return (
     <section className="relative pt-48 pb-20 px-6">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
@@ -152,19 +158,19 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
                    <div className={`inline-flex p-3 rounded-2xl mb-6 ${isDarkMode ? 'bg-purple-500/10 text-purple-500' : 'bg-pink-100 text-pink-600'}`}>
                      <Activity size={24} />
                    </div>
-                   <h3 className="text-3xl font-black uppercase tracking-tighter mb-2">Request Onboarding</h3>
+                   <h3 className={`text-3xl font-black uppercase tracking-tighter mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>Request Onboarding</h3>
                    <p className="text-[10px] font-bold opacity-30 uppercase tracking-[0.3em]">Phase 0: Project Validation</p>
                 </div>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input required name="name" type="text" className={`w-full px-8 py-4 rounded-2xl bg-current/5 border border-current/10 focus:outline-none ${isDarkMode ? 'focus:border-purple-500/50' : 'focus:border-pink-500/50'} text-xs font-medium`} placeholder="Founder Name" />
-                    <input required name="email" type="email" className={`w-full px-8 py-4 rounded-2xl bg-current/5 border border-current/10 focus:outline-none ${isDarkMode ? 'focus:border-purple-500/50' : 'focus:border-pink-500/50'} text-xs font-medium`} placeholder="Work Email" />
+                    <input required name="name" type="text" className={inputClasses} placeholder="Founder Name" />
+                    <input required name="email" type="email" className={inputClasses} placeholder="Work Email" />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input name="twitter" type="text" className={`w-full px-8 py-4 rounded-2xl bg-current/5 border border-current/10 focus:outline-none ${isDarkMode ? 'focus:border-purple-500/50' : 'focus:border-pink-500/50'} text-xs font-medium`} placeholder="Twitter Handle" />
-                    <input name="discord" type="text" className={`w-full px-8 py-4 rounded-2xl bg-current/5 border border-current/10 focus:outline-none ${isDarkMode ? 'focus:border-purple-500/50' : 'focus:border-pink-500/50'} text-xs font-medium`} placeholder="Discord Username" />
+                    <input name="twitter" type="text" className={inputClasses} placeholder="Twitter Handle" />
+                    <input name="discord" type="text" className={inputClasses} placeholder="Discord Username" />
                   </div>
-                  <textarea required name="message" rows={4} className={`w-full px-8 py-5 rounded-2xl bg-current/5 border border-current/10 focus:outline-none ${isDarkMode ? 'focus:border-purple-500/50' : 'focus:border-pink-500/50'} text-xs font-medium resize-none`} placeholder="Briefly describe your protocol mission..."></textarea>
+                  <textarea required name="message" rows={4} className={`${inputClasses} resize-none py-5`} placeholder="Briefly describe your protocol mission..."></textarea>
                   <button disabled={isSubmitting} className={`w-full py-6 rounded-full font-black text-xs uppercase tracking-[0.4em] ${isDarkMode ? 'bg-white text-black' : 'bg-pink-600 text-white'} hover:opacity-90 disabled:opacity-50 transition-all`}>
                     {isSubmitting ? 'Processing...' : 'Secure Transmission'}
                   </button>
