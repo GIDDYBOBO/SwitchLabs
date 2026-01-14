@@ -19,12 +19,6 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
             <span className={isDarkMode ? 'text-white' : 'text-pink-600'}>Switch</span>
             <span className={isDarkMode ? 'text-white' : 'text-pink-600'}>Labs</span>
           </div>
-
-          <nav className={`hidden lg:flex items-center gap-10 text-[9px] font-black uppercase tracking-[0.4em] ${isDarkMode ? 'opacity-40' : 'opacity-60 text-zinc-600'}`}>
-            <a href="#" className="hover:text-pink-600 hover:opacity-100 transition-all">Protocol</a>
-            <a href="#services" className="hover:text-pink-600 hover:opacity-100 transition-all">Strategy</a>
-            <a href="#team" className="hover:text-pink-600 hover:opacity-100 transition-all">Collective</a>
-          </nav>
         </div>
         
         {/* Utilities */}
