@@ -39,7 +39,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
           <h5 className="font-black mb-8 uppercase text-[9px] tracking-[0.4em] opacity-30 text-current">Presence</h5>
           <ul className="space-y-4 text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">
             <li>hello@switchlabs.ai</li>
-            <li>San Francisco // HQ</li>
+            <li>Abuja, Nigeria // HQ</li>
             <li>Digital Native</li>
           </ul>
         </div>

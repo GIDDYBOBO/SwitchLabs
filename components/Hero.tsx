@@ -10,13 +10,13 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
   const [showForm, setShowForm] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [tickerData, setTickerData] = useState({ sentiment: 98.2, vol: 1.2 });
+  const [tickerData, setTickerData] = useState({ sentiment: 30.0, vol: 115.0 });
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTickerData({
-        sentiment: 98 + Math.random() * 1.5,
-        vol: 1.1 + Math.random() * 0.4
+        sentiment: 29.5 + Math.random() * 1.0, // Stays around 30%
+        vol: 80 + Math.random() * 70 // Range 80K to 150K
       });
     }, 3000);
     return () => clearInterval(interval);
@@ -63,11 +63,11 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
         <div className={`mb-10 mono-font text-[9px] uppercase tracking-[0.3em] flex items-center gap-6 ${isDarkMode ? 'opacity-40' : 'text-pink-600 opacity-80'}`}>
           <div className="flex items-center gap-2">
             <div className={`w-1.5 h-1.5 rounded-full ${isDarkMode ? 'bg-green-500' : 'bg-pink-500'} animate-pulse`} />
-            <span>Node_Active</span>
+            <span>SWITCHLABS_ACTIVE</span>
           </div>
           <div className={`hidden md:flex gap-6 border-l ${isDarkMode ? 'border-current/20' : 'border-pink-200'} pl-6`}>
             <span>Sentiment: {tickerData.sentiment.toFixed(2)}%</span>
-            <span>Index_Vol: {tickerData.vol.toFixed(2)}B</span>
+            <span>Index_Vol: {tickerData.vol.toFixed(1)}K</span>
             <span>Region: Global_Edge</span>
           </div>
         </div>
@@ -102,10 +102,10 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
         {/* 03. High Precision Metrics Bar */}
         <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-4xl p-8 rounded-[2rem] mb-16 border ${isDarkMode ? 'bg-white/[0.02] border-white/5' : 'bg-white border-pink-100 shadow-sm'}`}>
           {[
-            { label: "TVL Managed", val: "$420M+" },
-            { label: "Growth Index", val: "12.4x" },
-            { label: "Code Audited", val: "850k+" },
-            { label: "Avg Sentiment", val: "94%" }
+            { label: "TVL Managed", val: "$200K+" },
+            { label: "Growth Index", val: "2.2x" },
+            { label: "Code Audited", val: "15" },
+            { label: "Avg Sentiment", val: "48%" }
           ].map((stat, i) => (
             <div key={i} className="text-center space-y-1">
               <p className={`text-[9px] font-black uppercase tracking-[0.3em] ${isDarkMode ? 'opacity-30' : 'text-pink-600/40'}`}>{stat.label}</p>
@@ -120,7 +120,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
             onClick={() => setShowForm(true)}
             className={`group relative flex items-center gap-4 ${isDarkMode ? 'bg-white text-black' : 'bg-pink-600 text-white shadow-lg shadow-pink-200'} px-10 py-5 rounded-full font-black text-[11px] uppercase tracking-[0.4em] transition-all hover:scale-[1.05] active:scale-95`}
           >
-            Initialize Protocol
+            Initialize Switchlabs
             <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </button>
           

@@ -1,6 +1,6 @@
 {
   "name": "Switch Labs",
-  "description": "A high-performance landing page for Switch Labs. Best deployed as a Static Site (Other) on Vercel.",
+  "description": "A high-performance landing page for Switch Labs. Optimized for Vite framework preset on Vercel.",
   "requestFramePermissions": [],
-  "framework": "static"
+  "framework": "vite"
 }

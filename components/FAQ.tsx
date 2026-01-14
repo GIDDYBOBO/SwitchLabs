@@ -81,7 +81,7 @@ const FAQ: React.FC<FAQProps> = ({ isDarkMode }) => {
         <div className="mb-16 space-y-3">
           <p className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40">04 / Frequently Asked</p>
           <h2 className={`text-2xl md:text-3xl font-black tracking-[0.2em] uppercase ${isDarkMode ? 'text-white' : 'text-black'}`}>
-            Protocol Intelligence
+            Switchlabs Intelligence
           </h2>
           <div className={`h-[1px] w-12 transition-all duration-700 ${isDarkMode ? 'bg-white/20' : 'bg-black/10'}`} />
         </div>
